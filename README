@@ -1,0 +1,20 @@
+A collection of my dotfiles!
+
+I manage them by hosting a git repo directly in my home directory and ignoring files by specifying "*" within ~/.git/info/exclude. This then requires any files I want changed to be force-added, and it's a lot easier than specifically mentioning the files I don't want to include. However, it has the drawback of git status thinking there are never new files, so you have to be sure to add them the first time. The general stack of programs I tend to use includes:
+
+WM:           Xmonad (with Xmobar)
+Shell:        Zsh (with Oh-my-zsh)
+Terminal:     Rxvt-unicode
+Editor:       Emacs
+Extras:       Tmux
+
+I also use Vim for quick editing. Some of the themes and packages I also use include:
+
+Desert theme for vim: http://www.vim.org/scripts/script.php?script_id=105
+Enhanced-Ruby-Mode: https://github.com/jacott/Enhanced-Ruby-Mode
+Python-mode: https://github.com/emacsmirror/python-mode
+Haskell-mode: https://github.com/haskell/haskell-mode
+Emacs-starter-kit: https://github.com/technomancy/emacs-starter-kit
+Oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
+
+I don't use Solarized because Emacs and Tmux refuse to play nice with one another in terms of colors, nevermind the non-trivial task of getting rxvt to cooperate in the first place. I'm also working on a configuration for Irssi.
