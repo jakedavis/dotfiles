@@ -1,0 +1,35 @@
+Config { font = "xft:Inconsolata-10:bold"
+       , bgColor = "#000000"
+       , fgColor = "#ffffff"
+       , position = TopW C 100
+       , commands = [ 
+                        Run Date    "%a %_d %B %Y %H:%M:%S" "date"        10
+                      , Run Weather "CYVR" 
+                                  [ "-t",       "<fc=#0055ff>YVR:</fc> <tempC>°C and <skyCondition>",
+                                    "-L",       "10",
+                                    "-H",       "25",
+                                    "--normal", "green",
+                                    "--high",   "red",
+                                    "--low",    "lightblue"             ] 1800
+                      , Run Network "wlan0" 
+                                  [ "-L",       "50",
+                                    "-H",       "500",
+                                    "--normal", "lightblue",
+                                    "--high",   "red"                   ] 10
+                      , Run Memory 
+                                  [ "-t",       "Mem: <usedratio>%"     ] 10
+                      , Run BatteryP
+                                  [ "/sys/class/power_supply/BAT0/" ]
+                                  [ "-t",       "<fc=#0055ff>BAT0:</fc> <acstatus> - <left>%",
+                                    "--", 
+                                    "-O",       "<fc=#00ff00>On</fc>",
+                                    "-o",       "<fc=#ff0000>Off</fc>",
+                                    "-f",       "ADP1/online",
+                                    "-p",       "3",
+                                    "-c",       "energy_full" ] 30
+                      , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %battery% | %CYVR% | <fc=#00ddff>%date%</fc> "
+}
