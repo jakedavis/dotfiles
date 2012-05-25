@@ -1,5 +1,5 @@
 ! Basics
-URxvt*termName: rxvt-256color
+URxvt*termName: xterm
 URxvt*background: #010101
 URxvt*foreground: #FFFFFF
 URxvt*scrollBar: false
