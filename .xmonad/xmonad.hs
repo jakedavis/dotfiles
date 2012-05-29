@@ -41,7 +41,7 @@ myConfig = defaultConfig
         myKeys (XConfig {modMask = modm}) = M.fromList $
                [ 
                  ((modm, xK_f),  spawn "google-chrome")
-               , ((modm, xK_m),  spawn "mumble") 
+               , ((modm, xK_s),  spawn "skype") 
                , ((0, xK_Print), spawn "scrot -e 'mv $f ~/personal/pictures/screenshots/'")
                ]
                
