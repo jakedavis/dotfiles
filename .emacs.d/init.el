@@ -21,10 +21,6 @@
 (setq py-install-directory "/home/jake/custom/python-mode")
 (require 'python-mode)
 
-;; Enhanced Ruby mode
-(add-to-list 'load-path "/home/jake/custom/Enhanced-Ruby-Mode")
-(require 'ruby-mode)
-
 ;; Haskell mode
 (load "~/custom/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -32,11 +28,3 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
-(global-hl-line-mode -1)
-
-(add-hook 'ruby-mode-hook
-  (lambda()
-    (hl-line-mode -1)
-    (global-hl-line-mode -1))
-  't
-)
