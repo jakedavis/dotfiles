@@ -26,6 +26,7 @@ alias valgrind="nocorrect valgrind"
 alias xh="xrandr --output HDMI-0 --auto"
 alias ls="ls -F --color=auto"
 alias chrome="google-chrome"
+alias mix="alsamixer"
 
 # EXPORTS
 export ZDOTDIR="/home/jake"
