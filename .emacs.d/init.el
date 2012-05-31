@@ -16,15 +16,17 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; disabled for speed / lack of python/haskell developing
+
 ;; Python mode
-(add-to-list 'load-path "/home/jake/custom/python-mode")
-(setq py-install-directory "/home/jake/custom/python-mode")
-(require 'python-mode)
+;;(add-to-list 'load-path "/home/jake/custom/python-mode")
+;;(setq py-install-directory "/home/jake/custom/python-mode")
+;;(require 'python-mode)
 
 ;; Haskell mode
-(load "~/custom/haskell-mode/haskell-site-file")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+;;(load "~/custom/haskell-mode/haskell-site-file")
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
