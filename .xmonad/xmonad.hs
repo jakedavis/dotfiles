@@ -45,7 +45,7 @@ myConfig = defaultConfig
                , ((0, xK_Print), spawn "scrot -e 'mv $f ~/personal/pictures/screenshots/'")
                ]
                
-myTerm = "urxvt"
+myTerm = "urxvtc"
 myModMask = mod4Mask
 myBorderWidth = 1
 myFocusedBorderColor = "#0055ee"
