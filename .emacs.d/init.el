@@ -16,6 +16,11 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; electronic mail
+(require 'notmuch)
+(setq message-kill-buffer-on-exit t)
+(setq sendmail-program "/usr/bin/msmtp")
+
 ;; disabled for speed / lack of python/haskell developing
 
 ;; Python mode
@@ -30,3 +35,15 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(send-mail-function nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
