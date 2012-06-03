@@ -53,7 +53,7 @@ myWorkspaces = [" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "]
 
 myManageHook = composeAll 
      [ 
-       className =? "skype" --> doShift "4"
-     , className =? "skype" --> doFloat
+--       className =? "skype" --> doShift "4"
+       className =? "skype" --> doFloat
      , className =? "google-chrome" --> doShift "1" 
      ]
