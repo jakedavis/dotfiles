@@ -16,34 +16,25 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; electronic mail
+;; electronic mail via notmuch
 (require 'notmuch)
 (setq message-kill-buffer-on-exit t)
 (setq sendmail-program "/usr/bin/msmtp")
 
 ;; disabled for speed / lack of python/haskell developing
-
 ;; Python mode
 ;;(add-to-list 'load-path "/home/jake/custom/python-mode")
 ;;(setq py-install-directory "/home/jake/custom/python-mode")
 ;;(require 'python-mode)
 
 ;; Haskell mode
-;;(load "~/custom/haskell-mode/haskell-site-file")
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+(load "~/custom/haskell-mode/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(send-mail-function nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;(custom-set-variables
+;; '(send-mail-function nil))
+;;(custom-set-faces
+;;)
