@@ -27,7 +27,7 @@ alias xh="xrandr --output HDMI-0 --auto"
 alias ls="ls -F --color=auto"
 alias chrome="google-chrome"
 alias mix="alsamixer"
-alias emacs="emacs -f notmuch"
+#alias emacs="emacs -f notmuch"
 
 # EXPORTS
 export ZDOTDIR="/home/jake"
