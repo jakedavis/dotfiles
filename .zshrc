@@ -21,6 +21,7 @@ alias role="nocorrect role"
 alias knife="nocorrect knife"
 alias acpi="nocorrect acpi"
 alias valgrind="nocorrect valgrind"
+alias rvm="nocorrect rvm"
 
 # GENERAL ALIASES
 alias xh="xrandr --output HDMI-0 --auto"
@@ -33,7 +34,7 @@ alias mix="alsamixer"
 export ZDOTDIR="/home/jake"
 export EDITOR=emacs
 export SHELL=zsh
-export TERM=rxvt-256color 
+export TERM=xterm-256color 
 export XDG_CONFIG_HOME="/home/jake/.config/"
 export OPSCODE_USER="jdinthe503"
 export PATH=$PATH:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin
@@ -42,3 +43,5 @@ export PATH=$PATH:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin
 function cd {
     builtin cd "$@" && ls --color
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
