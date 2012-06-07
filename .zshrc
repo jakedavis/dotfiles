@@ -27,6 +27,7 @@ alias ls="ls -F --color=auto"
 alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="if [[ -n $TMUX ]]; then TERM=screen-256color irssi; else irssi; fi"
+alias emacs="if [[ -n $TMUX ]]; then TERM=rxvt-256color emacs; else emacs; fi"
 
 # EXPORTS
 export ZDOTDIR="/home/jake"
