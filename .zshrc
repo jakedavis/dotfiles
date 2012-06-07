@@ -1,12 +1,10 @@
 # DIR/THEME
 ZSH=$HOME/custom/oh-my-zsh
-ZSH_THEME="gallifrey" # norm
+ZSH_THEME="gallifrey"
 
 # VARIABLES
 COMPLETION_WAITING_DOTS="true"
-# CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
-# DISABLE_AUTO_TITLE="true"
 
 # PLUGINS
 plugins=(git knife ruby python)
@@ -28,20 +26,19 @@ alias xh="xrandr --output HDMI-0 --auto"
 alias ls="ls -F --color=auto"
 alias chrome="google-chrome"
 alias mix="alsamixer"
-#alias emacs="emacs -f notmuch"
+alias irssi="if [[ -n $TMUX ]]; then TERM=screen-256color irssi; else irssi; fi"
 
 # EXPORTS
 export ZDOTDIR="/home/jake"
 export EDITOR=emacs
 export SHELL=zsh
-export TERM=xterm-256color 
+#export TERM=screen-256color 
 export XDG_CONFIG_HOME="/home/jake/.config/"
 export OPSCODE_USER="jdinthe503"
-export PATH=$PATH:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin
+export PATH=$PATH:$HOME/.rvm/bin:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin
 
 # FUNCTIONS
 function cd {
     builtin cd "$@" && ls --color
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

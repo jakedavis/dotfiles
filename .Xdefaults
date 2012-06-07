@@ -1,5 +1,5 @@
 ! Basics
-URxvt*termName: xterm-256color
+!URxvt*termName: screen-256color
 URxvt*background: #010101
 URxvt*foreground: #FFFFFF
 URxvt*scrollBar: false
