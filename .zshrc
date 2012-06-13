@@ -28,6 +28,8 @@ alias kec2="knife ec2 server list"
 
 alias gs="git status"
 alias gc="git clone"
+alias gd="git diff"
+alias gdc="git diff --cached"
 
 alias vp="vagrant provision"
 alias vu="vagrant up"
@@ -35,7 +37,7 @@ alias vh="vagrant halt"
 
 alias xh="xrandr --output HDMI-0 --auto"
 alias ls="ls -F --color=auto"
-alias la="ls -a"
+alias la="ls -A"
 alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
