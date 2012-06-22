@@ -25,11 +25,10 @@ Config { font = "xft:Inconsolata-10:bold"
                                     "-O",       "<fc=#00ff00>On</fc>",
                                     "-o",       "<fc=#ff0000>Off</fc>",
                                     "-f",       "ADP1/online",
-                                    "-p",       "3",
-                                    "-c",       "energy_full" ] 30
+                                    "-p",       "3" ] 30
                       , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %battery% | %KPDX% | <fc=#00ddff>%date%</fc> "
+       , template = "%StdinReader% }{ %battery% |  %KPDX% | <fc=#00ddff>%date%</fc> "
 }
