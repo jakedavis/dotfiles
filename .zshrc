@@ -1,8 +1,7 @@
 ZSH=$HOME/custom/oh-my-zsh
 ZSH_THEME="gallifrey"
 COMPLETION_WAITING_DOTS="true"
-#DISABLE_AUTO_UPDATE="true"
-plugins=(git knife ruby python)
+plugins=(knife ruby python)
 source $ZSH/oh-my-zsh.sh
 
 alias sl="nocorrect sl"
@@ -35,9 +34,11 @@ alias vp="vagrant provision"
 alias vu="vagrant up"
 alias vh="vagrant halt"
 
-alias xh="xrandr --output HDMI-0 --auto"
+alias xhon="xrandr --output HDMI-0 --auto"
+alias xhoff="xrandr --output HDMI-0 --off"
 alias ls="ls -F --color=auto"
 alias la="ls -A"
+alias lr="ls -AR"
 alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
