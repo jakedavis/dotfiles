@@ -24,9 +24,12 @@ alias kcl="knife client list"
 alias knl="knife node list"
 alias krsl="knife rackspace server list"
 alias kec2="knife ec2 server list" 
+alias kcsd="knife cookbook site download"
+alias kne="knife node edit"
 
 alias gs="git status"
-alias gc="git clone"
+alias gc="git commit"
+alias gcl="git clone"
 alias gd="git diff"
 alias gdc="git diff --cached"
 
