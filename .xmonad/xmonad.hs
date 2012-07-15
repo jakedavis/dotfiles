@@ -43,6 +43,7 @@ myConfig = defaultConfig
                  ((modm, xK_f),  spawn "google-chrome")
 	       , ((modm, xK_e),  spawn "evince")
                , ((modm, xK_s),  spawn "skype") 
+	       , ((modm, xK_m),  spawn "mplab_ide")
                , ((0, xK_Print), spawn "scrot -e 'mv $f ~/personal/pictures/screenshots/'")
                ]
                

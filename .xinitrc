@@ -15,8 +15,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	unset f
 fi
 
-xrandr --output HDMI-0 --auto --output LVDS --auto &
+xrandr --output LVDS --off --output HDMI-0 --auto &
 xsetroot -cursor_name left_ptr &
 urxvtd -q -o -f &
-feh --bg-fill ~/personal/pictures/wallpapers/space.jpg &
+feh --bg-fill ~/media/pictures/wallpapers/space.jpg &
 xmonad 

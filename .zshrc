@@ -27,6 +27,7 @@ alias kec2="knife ec2 server list"
 alias kcsd="knife cookbook site download"
 alias kne="knife node edit"
 
+alias ga="git add"
 alias gs="git status"
 alias gc="git commit"
 alias gcl="git clone"
