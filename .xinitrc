@@ -18,5 +18,5 @@ fi
 xrandr --output LVDS --off --output HDMI-0 --auto &
 xsetroot -cursor_name left_ptr &
 urxvtd -q -o -f &
-feh --bg-fill ~/media/pictures/wallpapers/space.jpg &
+feh --bg-fill ~/custom/wallpapers/IMG_1182.jpg &
 xmonad 

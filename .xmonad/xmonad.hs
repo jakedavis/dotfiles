@@ -41,10 +41,12 @@ myConfig = defaultConfig
         myKeys (XConfig {modMask = modm}) = M.fromList $
                [ 
                  ((modm, xK_f),  spawn "google-chrome")
-	       , ((modm, xK_e),  spawn "evince")
+       	       , ((modm, xK_e),  spawn "evince")
                , ((modm, xK_s),  spawn "skype") 
-	       , ((modm, xK_m),  spawn "mplab_ide")
-               , ((0, xK_Print), spawn "scrot -e 'mv $f ~/personal/pictures/screenshots/'")
+               , ((modm, xK_g),  spawn "gimp")
+               , ((modm, xK_p),  spawn "spotify")
+      	       , ((modm, xK_r),  spawn "rawstudio")
+               , ((0, xK_Print), spawn "scrot -e 'mv $f ~/'")
                ]
                
 myTerm = "urxvtc"
@@ -55,7 +57,6 @@ myWorkspaces = [" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "]
 
 myManageHook = composeAll 
      [ 
---       className =? "skype" --> doShift "4"
        className =? "skype" --> doFloat
      , className =? "google-chrome" --> doShift "1" 
      ]
