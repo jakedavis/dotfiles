@@ -30,9 +30,12 @@ alias kne="knife node edit"
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit"
+alias gco="git checkout"
+alias gb="git branch"
 alias gcl="git clone"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias master="git checkout master"
 
 alias vp="vagrant provision"
 alias vu="vagrant up"
@@ -57,3 +60,7 @@ function cd {
     builtin cd "$@" && ls --color
 }
 
+. /home/jake/custom/scripts/z.sh
+function precmd () {
+    _z --add "$(pwd -P)"
+}
