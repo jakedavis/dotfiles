@@ -15,7 +15,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	unset f
 fi
 
-xrandr --output LVDS --off --output HDMI-0 --auto &
+#xrandr --output LVDS --off --output HDMI-0 --auto &
 xsetroot -cursor_name left_ptr &
 urxvtd -q -o -f &
 feh --bg-fill ~/custom/wallpapers/IMG_1182.jpg &

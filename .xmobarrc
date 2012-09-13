@@ -3,9 +3,9 @@ Config { font = "xft:Inconsolata-10:bold"
        , fgColor = "#ffffff"
        , position = TopW C 100
        , commands = [ 
-                        Run Date    "%a %_d %B %Y %H:%M:%S" "date"        10
-                      , Run Weather "KPDX" 
-                                  [ "-t",       "<fc=#0055ff>PDX:</fc> <tempC>°C and <skyCondition>",
+                        Run Date    "%a %d %B %Y %H:%M:%S" "date"        10
+                      , Run Weather "CYVR" 
+                                  [ "-t",       "<fc=#0055ff>YVR:</fc> <tempC>°C and <skyCondition>",
                                     "-L",       "10",
                                     "-H",       "25",
                                     "--normal", "green",
@@ -30,5 +30,5 @@ Config { font = "xft:Inconsolata-10:bold"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %battery% |  %KPDX% | <fc=#00ddff>%date%</fc> "
+       , template = "%StdinReader% }{ %battery% |  %CYVR% | <fc=#00ddff>%date%</fc> "
 }
