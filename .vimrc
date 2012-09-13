@@ -4,6 +4,9 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set number
+set wrap
+set linebreak
+set tw=79
 colorscheme desert
 
 "au Bufenter *.hs compiler ghc

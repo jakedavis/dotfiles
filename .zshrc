@@ -1,6 +1,7 @@
 ZSH=$HOME/custom/oh-my-zsh
 ZSH_THEME="gallifrey"
 COMPLETION_WAITING_DOTS="true"
+DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python)
 source $ZSH/oh-my-zsh.sh
 
