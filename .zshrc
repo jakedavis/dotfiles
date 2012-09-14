@@ -51,7 +51,7 @@ alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
 
-export EDITOR=emacs
+export EDITOR=vim
 export SHELL=zsh
 export TERM=xterm-256color 
 export OPSCODE_USER="jdinthe503"

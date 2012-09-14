@@ -4,7 +4,7 @@ URxvt*background: #010101
 URxvt*foreground: #FFFFFF
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
-URxvt*font: xft:inconsolata
+URxvt*font: xft:inconsolata:size=10
 
 ! Cursor
 Xcursor.theme: Vanilla-DMZ-AA
