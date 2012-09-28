@@ -43,6 +43,7 @@ myConfig = defaultConfig
                  ((modm, xK_f),  spawn "google-chrome")
        	       , ((modm, xK_e),  spawn "evince")
                , ((modm, xK_s),  spawn "skype") 
+               , ((modm, xK_m),  spawn "qtoctave")
                , ((modm, xK_g),  spawn "gimp")
                , ((modm, xK_p),  spawn "spotify")
       	       , ((modm, xK_r),  spawn "rawstudio")
