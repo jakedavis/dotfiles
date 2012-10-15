@@ -9,7 +9,6 @@ set wrap
 set linebreak
 set tw=79
 filetype indent plugin on
-colorscheme desert
 
 au Bufenter *.hs compiler ghc
 filetype plugin on
