@@ -5,7 +5,8 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python git vagrant)
 source $ZSH/oh-my-zsh.sh
 
-alias t="date" 
+alias t="date"
+alias b="acpi"
 alias sl="nocorrect sl"
 alias feh="nocorrect feh"
 alias python="nocorrect python2"
