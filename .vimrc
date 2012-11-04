@@ -1,8 +1,8 @@
 syntax enable
 syntax on
 set background=dark
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set number
 set wrap

@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias t="date"
 alias b="acpi"
+alias bundle="nocorrect bundle"
 alias sl="nocorrect sl"
 alias feh="nocorrect feh"
 alias python="nocorrect python2"
