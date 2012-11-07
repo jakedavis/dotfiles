@@ -1,5 +1,5 @@
 ZSH=$HOME/custom/oh-my-zsh
-ZSH_THEME="gallifrey"
+ZSH_THEME="jakedavis"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python git vagrant)
@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias t="date"
 alias b="acpi"
+alias gem="nocorrect gem"
 alias bundle="nocorrect bundle"
 alias sl="nocorrect sl"
 alias feh="nocorrect feh"
@@ -17,6 +18,7 @@ alias knife="nocorrect knife"
 alias acpi="nocorrect acpi"
 alias valgrind="nocorrect valgrind"
 alias rvm="nocorrect rvm"
+alias tree="nocorrect tree" 
 
 # Chef/Knife aliases
 alias krff="knife role from file"
