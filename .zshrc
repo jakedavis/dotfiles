@@ -1,6 +1,5 @@
 ZSH=$HOME/custom/oh-my-zsh
 ZSH_THEME="jakedavis"
-COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python git vagrant)
 source $ZSH/oh-my-zsh.sh
@@ -58,7 +57,7 @@ export SHELL=zsh
 export TERM=xterm-256color 
 export OPSCODE_USER="jdinthe503"
 export OPSCODE_ORG="jakedavis"
-export PATH=$PATH:$HOME/.rvm/bin:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin
+export PATH=$PATH:$HOME/.rvm/bin:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin:$HOME/custom/play
 
 function cd {
     builtin cd "$@" && ls --color
