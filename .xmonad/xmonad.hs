@@ -56,7 +56,7 @@ myTerm = "urxvtc"
 myModMask = mod4Mask
 myBorderWidth = 0
 myFocusedBorderColor = "#0055ee"
-myWorkspaces = [" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "]
+myWorkspaces = [" 1 "," 2 "," 3 "," 4 "," 5 "]
 
 myManageHook = composeAll 
      [ 
