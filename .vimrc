@@ -13,5 +13,5 @@ syntax on
 filetype indent plugin on
 
 "" Ruby syntax highlighting for erb files
-autocmd BufNewFile *.erb set syntax=rubby
+autocmd BufNewFile *.erb set syntax=ruby
 
