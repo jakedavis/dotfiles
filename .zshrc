@@ -1,4 +1,4 @@
-ZSH=$HOME/custom/oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jakedavis"
 DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python git vagrant)
@@ -18,10 +18,14 @@ alias acpi="nocorrect acpi"
 alias valgrind="nocorrect valgrind"
 alias rvm="nocorrect rvm"
 alias tree="nocorrect tree" 
+alias vagrant="nocorrect vagrant"
 
 # Chef/Knife aliases
 alias krff="knife role from file"
 alias kcu="knife cookbook upload"
+alias kcbl="knife cookbook list"
+alias kcbd="knife cookbook delete"
+alias kcbs="knife cookbook show"
 alias kdbff="knife data bag from file"
 alias ks="knife status"
 alias kcd="knife client delete"
@@ -32,38 +36,46 @@ alias krsl="knife rackspace server list"
 alias kec2="knife ec2 server list" 
 alias kcsd="knife cookbook site download"
 alias kne="knife node edit"
+alias kdbs="knife data bag show"
+alias kp="knife preflight"
 
 # Supplement oh-my-zsh Git plugin
 alias gcl="git clone"
-alias gd="git diff"
+alias gd="git diff --color-words"
+alias gpo="git push origin"
+alias gpu="git push upstream"
+alias gco="git checkout"
 
 # Vagrant aliases
 alias vp="vagrant provision"
 alias vu="vagrant up"
 alias vh="vagrant halt"
+alias vs="vagrant status"
+alias vd="nocorrect vagrant destroy"
 
 # Misc
 alias xhon="xrandr --output HDMI-0 --auto"
 alias xhoff="xrandr --output HDMI-0 --off"
-alias ls="ls -F --color=auto"
+alias ls="ls -F"
 alias la="ls -A"
 alias lr="ls -AR"
 alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
 
+export VAGRANT_BOX=precise
+export COOKBOOKS=$HOME/dev/simple/cookbooks
+export ROLES=$HOME/dev/simple/roles
+export BACKEND=$HOME/dev/simple/backend
+export OPS=$HOME/dev/simple/ops
 export EDITOR=vim
 export SHELL=zsh
 export TERM=xterm-256color 
-export OPSCODE_USER="jdinthe503"
-export OPSCODE_ORG="jakedavis"
-export PATH=$PATH:$HOME/.rvm/bin:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin:$HOME/custom/play
+export PATH=$PATH:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin:/opt/chef/bin:$HOME/dev/simple/ops/projector/bin:/usr/local/share/python
 
-function cd {
-    builtin cd "$@" && ls --color
-}
+source $HOME/.zsh_additional
 
-. /home/jake/custom/scripts/z.sh
-function precmd () {
-    _z --add "$(pwd -P)"
-}
+# Helpers
+function cd { builtin cd "$@" && ls }
+. $HOME/custom/z.sh
+
