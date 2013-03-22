@@ -2,15 +2,16 @@
 "" I use Powerline, Fugitive, Lucius, CtrlP, BufExplorer, and NERDtree
 
 "" Some basic configuration
+set autoindent
+set expandtab
+set incsearch
+set linebreak
+set laststatus=2
+set number
 set shiftwidth=2
 set tabstop=2
-set expandtab
-set number
-set wrap
-set linebreak
 set tw=79
-set laststatus=2
-set incsearch
+set wrap
 
 "" Pathogen.vim
 execute pathogen#infect()
@@ -18,7 +19,13 @@ syntax on
 filetype indent plugin on
 
 "" Ruby syntax highlighting for erb files
-autocmd BufNewFile *.erb set syntax=ruby
+autocmd BufRead,BufNewFile *.erb set filetype=ruby
+
+"" Thank god this exists
+cabbrev W w
+cabbrev Q q
+cabbrev Wq wq
+cabbrev WQ wq
 
 "" Emacs-style minibuffer movement
 cnoremap <C-a>  <Home>
@@ -38,7 +45,7 @@ nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
 nmap ; :CtrlPBuffer<CR>
 
-"" Lucius
-colorscheme lucius
+"" Colorschemes : Lucius, Kolor
+colorscheme Lucius
 LuciusBlackLowContrast
 

@@ -24,7 +24,7 @@ alias vagrant="nocorrect vagrant"
 alias krff="knife role from file"
 alias kcu="knife cookbook upload"
 alias kcbl="knife cookbook list"
-alias kcbd="knife cookbook delete"
+alias kcbd="knife cookbook download"
 alias kcbs="knife cookbook show"
 alias kdbff="knife data bag from file"
 alias ks="knife status"
@@ -63,9 +63,9 @@ alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
 
-export VAGRANT_BOX=precise
+export VAGRANT_BOX=chef11
 export COOKBOOKS=$HOME/dev/simple/cookbooks
-export ROLES=$HOME/dev/simple/roles
+export ROLES=$HOME/dev/simple/cookbooks/roles
 export BACKEND=$HOME/dev/simple/backend
 export OPS=$HOME/dev/simple/ops
 export EDITOR=vim
