@@ -19,6 +19,7 @@ alias valgrind="nocorrect valgrind"
 alias rvm="nocorrect rvm"
 alias tree="nocorrect tree" 
 alias vagrant="nocorrect vagrant"
+alias todo="cat ~/todo.md"
 
 # Chef/Knife aliases
 alias krff="knife role from file"
@@ -52,6 +53,7 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant status"
 alias vd="nocorrect vagrant destroy"
+alias vr="vagrant destroy; y; vagrant up"
 
 # Misc
 alias xhon="xrandr --output HDMI-0 --auto"
@@ -63,7 +65,7 @@ alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
 
-export VAGRANT_BOX=chef11
+export VAGRANT_BOX=precise11
 export COOKBOOKS=$HOME/dev/simple/cookbooks
 export ROLES=$HOME/dev/simple/cookbooks/roles
 export BACKEND=$HOME/dev/simple/backend

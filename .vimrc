@@ -8,9 +8,9 @@ set incsearch
 set linebreak
 set laststatus=2
 set number
+set tw=79
 set shiftwidth=2
 set tabstop=2
-set tw=79
 set wrap
 
 "" Pathogen.vim
@@ -43,7 +43,7 @@ cnoremap <C-g>  <C-c>
 "" So legit
 nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
-nmap ; :CtrlPBuffer<CR>
+"" nmap ; :CtrlPBuffer<CR>
 
 "" Colorschemes : Lucius, Kolor
 colorscheme Lucius
