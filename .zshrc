@@ -16,6 +16,7 @@ alias role="nocorrect role"
 alias knife="nocorrect knife"
 alias acpi="nocorrect acpi"
 alias valgrind="nocorrect valgrind"
+alias chpst="nocorrect chpst"
 alias rvm="nocorrect rvm"
 alias tree="nocorrect tree" 
 alias vagrant="nocorrect vagrant"
@@ -48,8 +49,6 @@ alias gpu="git push upstream"
 alias gco="git checkout"
 
 # Vagrant aliases
-alias vp="vagrant provision"
-alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant status"
 alias vd="nocorrect vagrant destroy"
@@ -65,7 +64,9 @@ alias chrome="google-chrome"
 alias mix="alsamixer"
 alias irssi="TERM=screen-256color irssi"
 
-export VAGRANT_BOX=precise11
+# Various exports for various things!
+export VAGRANT_BOX=precise
+export CHEF_VERSION='11.4.0'
 export COOKBOOKS=$HOME/dev/simple/cookbooks
 export ROLES=$HOME/dev/simple/cookbooks/roles
 export BACKEND=$HOME/dev/simple/backend
@@ -73,9 +74,23 @@ export OPS=$HOME/dev/simple/ops
 export EDITOR=vim
 export SHELL=zsh
 export TERM=xterm-256color 
-export PATH=$PATH:/opt/vagrant/bin:/home/jake/.gem/ruby/1.9.1/bin:/usr/local/bin:/opt/chef/bin:$HOME/dev/simple/ops/projector/bin:/usr/local/share/python
+export GOPATH=$HOME/.go
 
+# Export PATH a bunch to make it readable
+export PATH=$PATH:/opt/vagrant/bin
+export PATH=$PATH:/home/jake/.gem/ruby/1.9.1/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/opt/chef/bin
+export PATH=$PATH:$HOME/dev/simple/ops/projector/bin
+export PATH=$PATH:/usr/local/share/python
+export PATH=$PATH:$HOME/dev/ec2/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.go/bin
+export PATH=$PATH:$HOME/.virtualenv/awscli/bin
+
+# Extra stuff
 source $HOME/.zsh_additional
+source $HOME/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Helpers
 function cd { builtin cd "$@" && ls }

@@ -2,7 +2,6 @@
 "" I use Powerline, Fugitive, Lucius, CtrlP, BufExplorer, and NERDtree
 
 "" Some basic configuration
-set autoindent
 set expandtab
 set incsearch
 set linebreak
