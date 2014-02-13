@@ -2,8 +2,8 @@ source /usr/local/share/chruby/chruby.sh
 chruby ruby-2.1.0
 
 # PS1 and shell color stuff
-export PS1="\\e[1;36m\\u\\e[m@\\e[1;31m\\h\\e[m \\e[1;32m\\W\\e[m: "
-export LSCOLORS="exfxcxdxbxegedabagacad"
+export PS1="\\e[1;36m\\u\\e[m@\\e[1;31m\\h\\e[m \\e[1;32m\\W\\e[m\\e[1;33m\$(__git_ps1)\\e[m: "
+export LSCOLORS="gxfxcxdxbxegedabagacad"
 
 # Aliases
 alias gs="git status"
@@ -51,3 +51,8 @@ source ~/.bash_additional
 
 # Helpers
 function cd { builtin cd "$@" && ls; }
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
+source ~/.git-prompt.sh
