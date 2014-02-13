@@ -3,7 +3,7 @@ chruby ruby-2.1.0
 
 # PS1 and shell color stuff
 export PS1="\\e[1;36m\\u\\e[m@\\e[1;31m\\h\\e[m \\e[1;32m\\W\\e[m: "
-export LS_COLORS="exfxcxdxbxegedabagacad"
+export LSCOLORS="exfxcxdxbxegedabagacad"
 
 # Aliases
 alias gs="git status"
