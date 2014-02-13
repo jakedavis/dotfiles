@@ -2,6 +2,7 @@
 "" I use Powerline, Fugitive, Lucius, CtrlP, BufExplorer, and NERDtree
 
 "" Some basic configuration
+set noswapfile
 set expandtab
 set incsearch
 set linebreak
@@ -11,14 +12,16 @@ set tw=79
 set shiftwidth=2
 set tabstop=2
 set wrap
+syntax on
 
 "" Pathogen.vim
 execute pathogen#infect()
-syntax on
 filetype indent plugin on
 
 "" Ruby syntax highlighting for erb files
+"" Markdown syntax
 autocmd BufRead,BufNewFile *.erb set filetype=ruby
+autocmd BufRead,BufNewFile *.md set syntax=markdown
 
 "" Thank god this exists
 cabbrev W w
@@ -45,6 +48,5 @@ nmap <C-b> :bprev<CR>
 "" nmap ; :CtrlPBuffer<CR>
 
 "" Colorschemes : Lucius, Kolor
-colorscheme Lucius
-LuciusBlackLowContrast
-
+colorscheme bw
+" LuciusBlackLowContrast
