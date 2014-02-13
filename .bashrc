@@ -2,7 +2,7 @@ source /usr/local/share/chruby/chruby.sh
 chruby ruby-2.1.0
 
 # PS1 and shell color stuff
-export PS1="\\e[1;36m\\u\\e[m@\\e[1;31m\\h\\e[m \\e[1;32m\\W\\e[m\\e[1;33m\$(__git_ps1)\\e[m: "
+export PS1="\\e[1;36m\\u\\e[m\\e[1;30m@\\e[m\\e[1;31m\\h\\e[m \\e[1;32m\\W\\e[m\\e[1;33m\$(__git_ps1)\\e[m: "
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 
 # Aliases
