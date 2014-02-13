@@ -3,24 +3,11 @@ ZSH_THEME="jakedavis"
 DISABLE_AUTO_UPDATE="true"
 plugins=(knife ruby python git vagrant)
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.1.0
 
 alias t="date"
 alias b="acpi"
-alias gem="nocorrect gem"
-alias bundle="nocorrect bundle"
-alias sl="nocorrect sl"
-alias feh="nocorrect feh"
-alias python="nocorrect python2"
-alias cookbook="nocorrect cookbook"
-alias role="nocorrect role"
-alias knife="nocorrect knife"
-alias acpi="nocorrect acpi"
-alias valgrind="nocorrect valgrind"
-alias chpst="nocorrect chpst"
-alias rvm="nocorrect rvm"
-alias tree="nocorrect tree" 
-alias vagrant="nocorrect vagrant"
-alias todo="cat ~/todo.md"
 
 # Chef/Knife aliases
 alias krff="knife role from file"
@@ -42,7 +29,6 @@ alias kdbs="knife data bag show"
 alias kp="knife preflight"
 
 # Supplement oh-my-zsh Git plugin
-alias gcl="git clone"
 alias gd="git diff --color-words"
 alias gpo="git push origin"
 alias gpu="git push upstream"
@@ -66,11 +52,11 @@ alias irssi="TERM=screen-256color irssi"
 
 # Various exports for various things!
 export VAGRANT_BOX=precise
-export CHEF_VERSION='11.4.0'
 export COOKBOOKS=$HOME/dev/simple/cookbooks
 export ROLES=$HOME/dev/simple/cookbooks/roles
 export BACKEND=$HOME/dev/simple/backend
 export OPS=$HOME/dev/simple/ops
+export SEC=$HOME/dev/simple/sec
 export EDITOR=vim
 export SHELL=zsh
 export TERM=xterm-256color 
@@ -78,21 +64,21 @@ export GOPATH=$HOME/.go
 
 # Export PATH a bunch to make it readable
 export PATH=$PATH:/opt/vagrant/bin
-export PATH=$PATH:/home/jake/.gem/ruby/1.9.1/bin
-export PATH=$PATH:/usr/local/bin
+export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/opt/chef/bin
 export PATH=$PATH:$HOME/dev/simple/ops/projector/bin
 export PATH=$PATH:/usr/local/share/python
 export PATH=$PATH:$HOME/dev/ec2/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.go/bin
-export PATH=$PATH:$HOME/.virtualenv/awscli/bin
+export PATH=$PATH:$HOME/dev/python/bin
+export PATH=$PATH:$HOME/dev/simple/ops/cloudbank/bin
 
 # Extra stuff
 source $HOME/.zsh_additional
-source $HOME/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Helpers
 function cd { builtin cd "$@" && ls }
-. $HOME/custom/z.sh
 
+# This is the most annoying feature in the universe
+DISABLE_CORRECTION="true"
