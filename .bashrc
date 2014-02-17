@@ -50,6 +50,11 @@ export GOPATH=$HOME/.go
 source ~/.bash_additional
 
 # Helpers
+function gitclean { 
+  rm -rf $PWD/.git/refs/heads/* $PWD/.git/refs/remotes/origin/*;
+  git pull;
+}
+
 function cd { builtin cd "$@" && ls; }
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
