@@ -29,7 +29,19 @@ cabbrev Q q
 cabbrev Wq wq
 cabbrev WQ wq
 
-"" Emacs-style minibuffer movement
+let mapleader = ","
+
+" Paredit bindings stolen from @sjl
+au FileType clojure noremap <buffer> () :<c-u>call PareditWrap("(", ")")<cr>
+au FileType clojure noremap <buffer> )( :<c-u>call PareditSplice()<cr>
+au FileType clojure noremap <buffer> (( :<c-u>call PareditMoveLeft()<cr>
+au FileType clojure noremap <buffer> )) :<c-u>call PareditMoveRight()<cr>
+au FileType clojure noremap <buffer> (j :<c-u>call PareditJoin()<cr>
+au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
+au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
+au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
+
+" Emacs-style minibuffer movement
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
 cnoremap <C-f>  <Right>
@@ -50,3 +62,8 @@ nmap <C-b> :bprev<CR>
 "" Colorschemes : Lucius, Kolor
 colorscheme bw
 " LuciusBlackLowContrast
+
+set wildignore+=/Users/jakedavis/dev/simple/cookbooks/*/cookbooks/*
+
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_java_checkers=[]
