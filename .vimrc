@@ -12,6 +12,7 @@ set tw=79
 set shiftwidth=2
 set tabstop=2
 set wrap
+set backspace=indent,eol,start
 syntax on
 
 "" Pathogen.vim
