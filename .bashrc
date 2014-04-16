@@ -24,6 +24,8 @@ alias vd="vagrant destroy"
 # Do want colors
 alias ls="ls -GF"
 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+
 # Export PATH a bunch to make it readable
 export PATH=$PATH:/opt/vagrant/bin
 export PATH=/usr/local/bin:$PATH
@@ -34,13 +36,15 @@ export PATH=$PATH:$HOME/dev/ec2/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$HOME/dev/python/bin
-export PATH=$PATH:$HOME/dev/simple/ops/cloudbank/bin
+export PATH=$PATH:$HOME/dev/simple/ops/cloudbank/venv/bin
+export PATH=$PATH:$HOME/custom/scripts
 
 # Various exports for various things!
 export VAGRANT_BOX=precise
 export COOKBOOKS=$HOME/dev/simple/cookbooks
 export ROLES=$HOME/dev/simple/cookbooks/roles
 export BACKEND=$HOME/dev/simple/backend
+export ANALYTICS=$HOME/dev/simple/analytics
 export OPS=$HOME/dev/simple/ops
 export SEC=$HOME/dev/simple/sec
 export EDITOR=vim
