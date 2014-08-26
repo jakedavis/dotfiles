@@ -1,4 +1,4 @@
-"" jakedavis ~/.vimrc
+" jakedavis ~/.vimrc
 "" I use Powerline, Fugitive, Lucius, CtrlP, BufExplorer, and NERDtree
 
 "" Some basic configuration
@@ -13,16 +13,30 @@ set shiftwidth=2
 set tabstop=2
 set wrap
 set backspace=indent,eol,start
-syntax on
+set wmh=0 "" Minimum window height to 0 lines
+
+"" Pane manipulation
+set splitbelow
+set splitright
+noremap :wincmd <C-w>
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 "" Pathogen.vim
 execute pathogen#infect()
 filetype indent plugin on
+syntax on
 
 "" Ruby syntax highlighting for erb files
 "" Markdown syntax
 autocmd BufRead,BufNewFile *.erb set filetype=ruby
 autocmd BufRead,BufNewFile *.md set syntax=markdown
+
+" Delete whitespace at EOL on :w for clojure/ruby
+autocmd BufWritePre *.clj :%s/\s\+$//e
+autocmd BufWritePre *.rb :%s/\s\+$//e
 
 "" Thank god this exists
 cabbrev W w
@@ -42,6 +56,9 @@ au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
 au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
 au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
 
+" Linewrap Git commit messages to 72 columns
+au FileType gitcommit set tw=72
+
 " Emacs-style minibuffer movement
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
@@ -55,6 +72,9 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g>  <C-c>
 
+"" Split lines
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
 "" So legit
 nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
@@ -64,7 +84,17 @@ nmap <C-b> :bprev<CR>
 colorscheme bw
 " LuciusBlackLowContrast
 
-set wildignore+=/Users/jakedavis/dev/simple/cookbooks/*/cookbooks/*
+"" Rubyyyy
+set wildignore+=/Users/jake/dev/simple/cookbooks/*/cookbooks/*
+set wildignore+=/Users/jake/dev/simple/cookbooks/*/vendor/*
+set wildignore+=/Users/jake/dev/simple/cookbooks/*/bin/*
+set wildignore+=/Users/jake/dev/simple/cookbooks/*/tmp/*
+set wildignore+=venv
+
+"" Clojureeee
+set wildignore+=target
 
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_java_checkers=[]
+
+set rtp+=/Users/jake/.vim/bundle/powerline/powerline/bindings/vim
