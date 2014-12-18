@@ -97,4 +97,30 @@ set wildignore+=target
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_java_checkers=[]
 
-set rtp+=/Users/jake/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=/Users/jake/.vim/bundle/powerline/powerline/bindings/vim
+
+"" Go linting
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+"" Show cursorline in current window
+augroup cline
+  au!
+augroup END
+ 
+augroup cline
+  au!
+  au WinLeave,InsertEnter * set nocursorline
+  au WinEnter,InsertLeave * set cursorline
+augroup END
+
+"" Trailing whitespace
+augroup trailing
+  au!
+augroup END
+
+augroup trailing
+  au!
+  au InsertEnter * :set listchars-=trail:⌴
+  au InsertLeave * :set listchars+=trail:⌴
+augroup END
