@@ -1,6 +1,23 @@
 " jakedavis ~/.vimrc
 "" I use Powerline, Fugitive, Lucius, CtrlP, BufExplorer, and NERDtree
 
+"" Pathogen.vim
+execute pathogen#infect()
+filetype indent plugin on
+syntax on
+
+"" Color scheme
+set background=dark
+colorscheme solarized
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+" colorscheme hybrid
+" colorscheme LuciusBlackLowContrast
+" colorscheme bw
+
+"" Not sure entirely, but for Paredit makes , the leader.
+let mapleader = ","
+
 "" Some basic configuration
 set noswapfile
 set expandtab
@@ -24,11 +41,6 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
-"" Pathogen.vim
-execute pathogen#infect()
-filetype indent plugin on
-syntax on
-
 "" Ruby syntax highlighting for erb files
 "" Markdown syntax
 autocmd BufRead,BufNewFile *.erb set filetype=ruby
@@ -38,23 +50,11 @@ autocmd BufRead,BufNewFile *.md set syntax=markdown
 autocmd BufWritePre *.clj :%s/\s\+$//e
 autocmd BufWritePre *.rb :%s/\s\+$//e
 
-"" Thank god this exists
+"" Autocorrections for save/quit misspellings
 cabbrev W w
 cabbrev Q q
 cabbrev Wq wq
 cabbrev WQ wq
-
-let mapleader = ","
-
-" Paredit bindings stolen from @sjl
-au FileType clojure noremap <buffer> () :<c-u>call PareditWrap("(", ")")<cr>
-au FileType clojure noremap <buffer> )( :<c-u>call PareditSplice()<cr>
-au FileType clojure noremap <buffer> (( :<c-u>call PareditMoveLeft()<cr>
-au FileType clojure noremap <buffer> )) :<c-u>call PareditMoveRight()<cr>
-au FileType clojure noremap <buffer> (j :<c-u>call PareditJoin()<cr>
-au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
-au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
-au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
 
 " Linewrap Git commit messages to 72 columns
 au FileType gitcommit set tw=72
@@ -75,33 +75,40 @@ cnoremap <C-g>  <C-c>
 "" Split lines
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
-"" So legit
+"" Ctrl-b/n move between buffers
 nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
-"" nmap ; :CtrlPBuffer<CR>
 
-"" Colorschemes : Lucius, Kolor
-colorscheme bw
-" LuciusBlackLowContrast
-
-"" Rubyyyy
+""""" RUBY """""
 set wildignore+=/Users/jake/dev/simple/cookbooks/*/cookbooks/*
 set wildignore+=/Users/jake/dev/simple/cookbooks/*/vendor/*
 set wildignore+=/Users/jake/dev/simple/cookbooks/*/bin/*
 set wildignore+=/Users/jake/dev/simple/cookbooks/*/tmp/*
 set wildignore+=venv
 
-"" Clojureeee
+""""" CLOJURE """""
 set wildignore+=target
 
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_java_checkers=[]
+" Aligns multiline text (vs. aligning with the quote)
+let g:clojure_align_multiline_strings = 1
 
-"set rtp+=/Users/jake/.vim/bundle/powerline/powerline/bindings/vim
+" Paredit bindings stolen from @sjl
+au FileType clojure noremap <buffer> () :<c-u>call PareditWrap("(", ")")<cr>
+au FileType clojure noremap <buffer> )( :<c-u>call PareditSplice()<cr>
+au FileType clojure noremap <buffer> (( :<c-u>call PareditMoveLeft()<cr>
+au FileType clojure noremap <buffer> )) :<c-u>call PareditMoveRight()<cr>
+au FileType clojure noremap <buffer> (j :<c-u>call PareditJoin()<cr>
+au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
+au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
+au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
 
-"" Go linting
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+"" Syntax checking
+let g:syntastic_python_checkers   = ['flake8']
+let g:syntastic_java_checkers     = []
+let g:syntastic_ruby_checkers     = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_exec = '/Users/jake/.rubies/ruby-2.1.1/bin/ruby /Users/jake/.gem/ruby/2.1.1/bin/rubocop'
+
+""""" VARIOUS HELPERS """""
 
 "" Show cursorline in current window
 augroup cline
@@ -114,7 +121,7 @@ augroup cline
   au WinEnter,InsertLeave * set cursorline
 augroup END
 
-"" Trailing whitespace
+"" Show trailing whitespace
 augroup trailing
   au!
 augroup END
