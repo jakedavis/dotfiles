@@ -8,14 +8,15 @@ syntax on
 
 "" Color scheme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-" colorscheme hybrid
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 " colorscheme LuciusBlackLowContrast
 " colorscheme bw
 
-"" Not sure entirely, but for Paredit makes , the leader.
+" For various plugins (Paredit, etc.)
 let mapleader = ","
 
 "" Some basic configuration
@@ -101,9 +102,30 @@ au FileType clojure noremap <buffer> (j :<c-u>call PareditJoin()<cr>
 au FileType clojure noremap <buffer> (s :<c-u>call PareditSplit()<cr>
 au FileType clojure noremap <buffer> [ :<c-u>call PareditSmartJumpOpening(0)<cr>
 au FileType clojure noremap <buffer> ] :<c-u>call PareditSmartJumpClosing(0)<cr>
+au FileType clojure nmap <leader>e :%Eval<cr>
+
+"" GO
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+noremap <leader>gd :GoDoc<CR>
+noremap <leader>gb :GoBuild<CR>
+noremap <leader>gt :GoTest<CR>
+noremap <leader>gr :GoRun<CR>
+noremap <leader>gp :GoPlay<CR>
+
+"" ELM
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>
 
 "" Syntax checking
-let g:syntastic_python_checkers   = ['flake8']
+let g:syntastic_go_checkers       = ['golint', 'govet', 'errcheck']
+let g:syntastic_python_checkers   = []
 let g:syntastic_java_checkers     = []
 let g:syntastic_ruby_checkers     = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_exec = '/Users/jake/.rubies/ruby-2.1.1/bin/ruby /Users/jake/.gem/ruby/2.1.1/bin/rubocop'
