@@ -1,5 +1,5 @@
-source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.3.0
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby 2.3.1
 
 # Color support, just nice sugar
 BBlack='\[\e[1;30m\]'
@@ -17,10 +17,13 @@ parse_git_branch() {
 }
 export PS1="$BCyan\u$BWhite/$BRed\W$BWhite@$BBlack\$(parse_git_branch)$NWhite: "
 
+# Support NVM
+export NVM_DIR="$HOME/.nvm"
+
 # Subset "hub" within "git"
 eval "$(hub alias -s)"
 
-# Git aliases 
+# Git aliases
 alias gs="git status"
 alias gb="git branch"
 alias ga="git add"
@@ -33,23 +36,16 @@ alias gpr="hub pull-request"
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
 
-# Append filetype (/ dir, @ symlink, etc) and add color
 alias ls="ls -GF"
 
-export VAGRANT_BOX=saucy
-export SIMPLE=$HOME/dev/simple
-export OPS=$HOME/dev/simple/ops
-export ENG=$HOME/dev/simple/eng
-export SEC=$HOME/dev/simple/security
+export OPS=$HOME/dev/github.banksimple.com/ops
 export EDITOR=vim
 export GOPATH=$HOME/.go
-export GITHUB_USERNAME=jake
+export GITHUB_USER=jakedavis
 
-# Export PATH a bunch to make it readable
-export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/dev/simple/ops/cloudbank/venv/bin
-export PATH=$PATH:$GOPATH/bin
-
-source ~/.bash_additional
+# This is so I can bring my bashrc to work and keep secrets in a separate file
+if [ -e ~/.bash_additional ]; then
+  source ~/.bash_additional
+fi
 
 function cd { builtin cd "$@" && ls; }
