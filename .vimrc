@@ -12,7 +12,7 @@ set incsearch
 set linebreak
 set laststatus=2
 set number
-set tw=79
+set tw=99
 set shiftwidth=2
 set tabstop=2
 set wrap
@@ -54,28 +54,15 @@ set wildignore+=*venv*
 set wildignore+=*target*
 set wildignore+=*node_modules*
 
-" Aligns multiline text (vs. aligning with the quote)
-let g:clojure_align_multiline_strings = 1
-
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "goimports"
+let g:go_highlight_fields = 1
+
 noremap <leader>gd :GoDoc<CR>
 noremap <leader>gb :GoBuild<CR>
 noremap <leader>gt :GoTest<CR>
 noremap <leader>gr :GoRun<CR>
 noremap <leader>gp :GoPlay<CR>
-
-"" Syntax checking
-let g:syntastic_go_checkers       = []
-let g:syntastic_python_checkers   = []
-let g:syntastic_java_checkers     = []
-let g:syntastic_ruby_checkers     = []
-let g:syntastic_ruby_rubocop_exec = ''
 
 "" Show cursorline in current window
 augroup cline
@@ -98,3 +85,5 @@ augroup trailing
   au InsertEnter * :set listchars-=trail:⌴
   au InsertLeave * :set listchars+=trail:⌴
 augroup END
+
+autocmd BufWritePost *.py call flake8#Flake8()

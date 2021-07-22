@@ -1,5 +1,5 @@
 source /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby 2.3.1
+chruby 2.7.1
 
 # Color support, just nice sugar
 BBlack='\[\e[1;30m\]'
@@ -17,12 +17,6 @@ parse_git_branch() {
 }
 export PS1="$BCyan\u$BWhite/$BRed\W$BWhite@$BBlack\$(parse_git_branch)$NWhite: "
 
-# Support NVM
-export NVM_DIR="$HOME/.nvm"
-
-# Subset "hub" within "git"
-eval "$(hub alias -s)"
-
 # Git aliases
 alias gs="git status"
 alias gb="git branch"
@@ -32,9 +26,6 @@ alias gd="git diff --color-words"
 alias gpo="git push origin"
 alias gpu="git push upstream"
 alias gco="git checkout"
-alias gpr="hub pull-request"
-
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
 
 alias ls="ls -GF"
 
@@ -43,9 +34,15 @@ export EDITOR=vim
 export GOPATH=$HOME/.go
 export GITHUB_USER=jakedavis
 
+export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:$HOME/.cargo/bin
+
 # This is so I can bring my bashrc to work and keep secrets in a separate file
 if [ -e ~/.bash_additional ]; then
   source ~/.bash_additional
 fi
 
 function cd { builtin cd "$@" && ls; }
+source "$HOME/.cargo/env"
