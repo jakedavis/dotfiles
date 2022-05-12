@@ -1,9 +1,23 @@
-"" Pathogen.vim
-execute pathogen#infect()
 filetype indent plugin on
 syntax on
 
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/calendar-vim'
+Plug 'vmchale/just-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/vim-go'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+call plug#end()
+
+let maplocalleader = "."
 let mapleader = ","
+
+let g:airline_theme='bubblegum'
+let g:org_agenda_files=['~/dev/org/*.org']
 
 "" Some basic configuration
 set noswapfile
@@ -86,4 +100,4 @@ augroup trailing
   au InsertLeave * :set listchars+=trail:⌴
 augroup END
 
-autocmd BufWritePost *.py call flake8#Flake8()
+set re=0
